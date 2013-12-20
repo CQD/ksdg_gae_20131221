@@ -2,20 +2,11 @@ package idv.cqd.ksdg.gae;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.appengine.api.datastore.Entity;
-import com.google.appengine.api.datastore.Key;
-import com.google.appengine.api.datastore.PreparedQuery;
-import com.google.appengine.api.datastore.Query;
-import com.google.appengine.api.datastore.Query.Filter;
-import com.google.appengine.api.datastore.Query.FilterOperator;
-import com.google.appengine.api.datastore.Query.FilterPredicate;
-import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.appengine.api.memcache.MemcacheService;
 import com.google.appengine.api.memcache.MemcacheServiceFactory;
 
@@ -45,7 +36,7 @@ public class MemcacheServlet extends HttpServlet {
 			
 			if (mc.contains(key)){
 				// if key exists, display it
-				String value = mc.get(key).toString();
+				String value = (String) mc.get(key);
 				pw.println("<p>"+key+" found! Value is: "+value);
 			} else {
 				// if key not exists, show error message	
