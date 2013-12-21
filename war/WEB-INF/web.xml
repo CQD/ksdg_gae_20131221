@@ -12,6 +12,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>MemcacheServlet</servlet-name>
 		<servlet-class>idv.cqd.ksdg.gae.MemcacheServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>TaskQueueServlet</servlet-name>
+		<servlet-class>idv.cqd.ksdg.gae.TaskQueueServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TaskHandlerServlet</servlet-name>
+		<servlet-class>idv.cqd.ksdg.gae.TaskHandlerServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>DatastoreServlet</servlet-name>
 		<url-pattern>/datastore</url-pattern>
@@ -19,6 +27,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>MemcacheServlet</servlet-name>
 		<url-pattern>/memcache</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TaskQueueServlet</servlet-name>
+		<url-pattern>/taskqueue</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TaskHandlerServlet</servlet-name>
+		<url-pattern>/_queue/addLongJob/</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
