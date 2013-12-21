@@ -92,8 +92,9 @@ public class DatastoreServlet extends HttpServlet {
 			String title = (String) result.getProperty("title");
 			String content = (String) result.getProperty("content");
 			String author = (String) result.getProperty("author");
+			String keyString = result.getKey().toString();
 
-			pw.println("<p>["+ title + "]<br>" + content + "<br> - by " + author);
+			pw.println("<p>["+ title + "]<br>" + content + "<br> - by " + author + "<br>"+keyString);
 		}
 		pw.println("<hr>");
 
